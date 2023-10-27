@@ -1,0 +1,32 @@
+---
+import CardService from "../components/CardService.astro";
+import Menu from "../components/Menu.astro";
+import TitlePage from "../components/TitlePage.astro";
+
+const services = [
+    {
+        titulo: "Web Development",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorem accusamus provident eaque nulla voluptatem, vel laudantium deleniti id soluta ducimus ea maiores quibusdam ab vero perspiciatis a, beatae laboriosam!"
+    },
+    {
+        titulo: "Mobile Development",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorem accusamus provident eaque nulla voluptatem, vel laudantium deleniti id soluta ducimus ea maiores quibusdam ab vero perspiciatis a, beatae laboriosam!"
+    },
+    {
+        titulo: "Consultation",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorem accusamus provident eaque nulla voluptatem, vel laudantium deleniti id soluta ducimus ea maiores quibusdam ab vero perspiciatis a, beatae laboriosam!"
+    },
+]
+---
+<Menu />
+<section class="bg-gray-200 pt-20 pb-28 px-8">
+    <div class="max-w-6xl mx-auto">
+        <TitlePage title="Services" subtitle="Here's what I offer" />
+        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            {
+                services.map((service)=> <CardService title={service.titulo} desc={service.desc} />)
+            }
+        </div>
+    </div>
+</section>
+
